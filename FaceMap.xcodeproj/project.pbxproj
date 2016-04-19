@@ -196,7 +196,7 @@
 				TargetAttributes = {
 					6E744E981CC1CB24009D3F9C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 48NDGQ5EY7;
+						DevelopmentTeam = PNU7AS5372;
 					};
 					6E744EAF1CC1CB24009D3F9C = {
 						CreatedOnToolsVersion = 7.3;
@@ -408,10 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pablo.FaceMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -419,10 +422,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pablo.FaceMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -491,6 +497,7 @@
 				6E744EC61CC1CB24009D3F9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E744EC71CC1CB24009D3F9C /* Build configuration list for PBXNativeTarget "FaceMapTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +506,7 @@
 				6E744EC91CC1CB24009D3F9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E744ECA1CC1CB24009D3F9C /* Build configuration list for PBXNativeTarget "FaceMapUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +515,7 @@
 				6E744ECC1CC1CB24009D3F9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
