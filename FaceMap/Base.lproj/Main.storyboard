@@ -53,14 +53,14 @@
                                 <rect key="frame" x="156" y="195" width="62" height="30"/>
                                 <state key="normal" title="ON GRID"/>
                                 <connections>
-                                    <segue destination="yo4-kJ-43l" kind="show" id="Chb-fc-Y1T"/>
+                                    <segue destination="yo4-kJ-43l" kind="show" identifier="ongridtoemoji" id="Chb-fc-Y1T"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-yc-DS5">
                                 <rect key="frame" x="153" y="424" width="67" height="30"/>
                                 <state key="normal" title="OFF GRID"/>
                                 <connections>
-                                    <segue destination="xBx-7M-vAv" kind="show" id="rjk-15-u3Z"/>
+                                    <segue destination="UKF-Va-Yuq" kind="show" identifier="offgridtoemoji" id="ihi-rT-dMx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -83,37 +83,164 @@
                     <view key="view" contentMode="scaleToFill" id="soF-6P-Ev6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="Rp3-5h-Glz">
+                                <rect key="frame" x="57" y="38" width="70" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="veryhappy" translatesAutoresizingMaskIntoConstraints="NO" id="srq-3n-hqb">
+                                <rect key="frame" x="228" y="38" width="69" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verysad" translatesAutoresizingMaskIntoConstraints="NO" id="wk9-gk-B7E">
+                                <rect key="frame" x="57" y="146" width="70" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verysad2" translatesAutoresizingMaskIntoConstraints="NO" id="bvH-pV-0aK">
+                                <rect key="frame" x="228" y="146" width="69" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scared" translatesAutoresizingMaskIntoConstraints="NO" id="1yo-wG-6JZ">
+                                <rect key="frame" x="57" y="257" width="70" height="67"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frighten" translatesAutoresizingMaskIntoConstraints="NO" id="r2P-7S-gpM">
+                                <rect key="frame" x="228" y="257" width="69" height="67"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="angry" translatesAutoresizingMaskIntoConstraints="NO" id="keN-bt-KtC">
+                                <rect key="frame" x="57" y="368" width="70" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furious" translatesAutoresizingMaskIntoConstraints="NO" id="kyf-B9-tQg">
+                                <rect key="frame" x="228" y="368" width="69" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="depressed" translatesAutoresizingMaskIntoConstraints="NO" id="cRG-bl-JnD">
+                                <rect key="frame" x="57" y="477" width="70" height="71"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="ilW-BT-5V4">
+                                <rect key="frame" x="228" y="477" width="69" height="71"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="8NQ-UA-Ywm" kind="show" identifier="emojitomap" id="TQO-41-yS8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNd-Mo-Ldc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.5" y="-383.5"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="YSj-OM-riw">
+        <scene sceneID="1UA-ts-unz">
             <objects>
-                <viewController id="xBx-7M-vAv" sceneMemberID="viewController">
+                <viewController id="8NQ-UA-Ywm" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HA4-0o-Rfa"/>
-                        <viewControllerLayoutGuide type="bottom" id="t5l-e5-aGl"/>
+                        <viewControllerLayoutGuide type="top" id="jW3-CL-yJO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bp3-Oo-d2D"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Dz-ee-Vym">
+                    <view key="view" contentMode="scaleToFill" id="oqb-2O-tik">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cCZ-qk-UHH">
+                                <rect key="frame" x="38" y="41" width="300" height="574"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" selected="YES"/>
+                                </accessibility>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ta4-NL-FYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671.5" y="-383.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ffa-7M-S4Z">
+            <objects>
+                <viewController id="UKF-Va-Yuq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="urL-6p-o8U"/>
+                        <viewControllerLayoutGuide type="bottom" id="aVG-9O-9jp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qf1-ze-Dx2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="happy" translatesAutoresizingMaskIntoConstraints="NO" id="Y7D-I7-fIt">
+                                <rect key="frame" x="57" y="38" width="70" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="veryhappy" translatesAutoresizingMaskIntoConstraints="NO" id="3kj-88-yBU">
+                                <rect key="frame" x="228" y="38" width="69" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verysad" translatesAutoresizingMaskIntoConstraints="NO" id="Yx8-JM-nhR">
+                                <rect key="frame" x="57" y="146" width="70" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="verysad2" translatesAutoresizingMaskIntoConstraints="NO" id="em1-L2-rLe">
+                                <rect key="frame" x="228" y="146" width="69" height="66"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="scared" translatesAutoresizingMaskIntoConstraints="NO" id="ga2-cb-3P6">
+                                <rect key="frame" x="59" y="257" width="68" height="67"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="frighten" translatesAutoresizingMaskIntoConstraints="NO" id="KHz-oe-Bok">
+                                <rect key="frame" x="228" y="257" width="69" height="67"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="angry" translatesAutoresizingMaskIntoConstraints="NO" id="VCK-tb-IhP">
+                                <rect key="frame" x="60" y="368" width="67" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="furious" translatesAutoresizingMaskIntoConstraints="NO" id="RC3-hD-3EL">
+                                <rect key="frame" x="228" y="368" width="67" height="69"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="depressed" translatesAutoresizingMaskIntoConstraints="NO" id="2zj-TA-Ncy">
+                                <rect key="frame" x="57" y="477" width="70" height="71"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="excited" translatesAutoresizingMaskIntoConstraints="NO" id="gQq-A6-dxG">
+                                <rect key="frame" x="228" y="477" width="69" height="71"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="mYR-H4-D2b" kind="show" identifier="emojitomap2" id="f9z-7p-2b8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snu-qD-DIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5" y="483.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oD4-Vu-4r7">
+            <objects>
+                <viewController id="mYR-H4-D2b" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aGj-k8-zxp"/>
+                        <viewControllerLayoutGuide type="bottom" id="qGc-Xm-5ZC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S2f-ta-N0G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YeI-yK-dca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30a-WO-F8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5" y="579.5"/>
+            <point key="canvasLocation" x="1671.5" y="483.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="angry" width="79" height="75"/>
         <image name="default photo" width="224" height="154"/>
+        <image name="depressed" width="77" height="78"/>
+        <image name="excited" width="77" height="76"/>
+        <image name="frighten" width="77" height="77"/>
+        <image name="furious" width="78" height="74"/>
+        <image name="happy" width="78" height="78"/>
+        <image name="scared" width="78" height="78"/>
+        <image name="veryhappy" width="77" height="78"/>
+        <image name="verysad" width="77" height="77"/>
+        <image name="verysad2" width="77" height="76"/>
     </resources>
 </document>
