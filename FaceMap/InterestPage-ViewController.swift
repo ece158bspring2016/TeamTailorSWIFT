@@ -6,6 +6,9 @@
 //  Copyright © 2016 Pablo. All rights reserved.
 //
 
+/*Images by Freepik and Baianat www.flaticon.com */
+
+
 import UIKit
 
 class InterestPage_ViewController: UIViewController {
