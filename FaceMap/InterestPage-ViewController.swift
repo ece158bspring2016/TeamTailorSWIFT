@@ -10,10 +10,6 @@ import UIKit
 
 class InterestPage_ViewController: UIViewController {
     
-    var ishighlighted : Bool = false
-    var isrepeat : Bool = false
-    var flag = [0,0,0]
-    var isrepeated = [0,0,0]
     var count = 0
     
     var tempbutton1 = 0
