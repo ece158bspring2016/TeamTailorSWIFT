@@ -10,33 +10,108 @@ import UIKit
 
 class InterestPage_ViewController: UIViewController {
     
-    @IBOutlet weak var education: UIButton!
+    var ishighlighted : Bool = false
+    var isrepeat : Bool = false
+    var flag = [0,0,0]
+    var isrepeated = [0,0,0]
+    var count = 0
     
-    var Ishighlighted : Bool = false
+    var tempbutton1 = 0
+    var tempbutton2 = 0
+    var tempbutton3 = 0
     
+    @IBOutlet weak var womenoutlet: UIButton!
+    @IBOutlet weak var menoutlet: UIButton!
+    @IBOutlet weak var randomoutlet: UIButton!
+    @IBOutlet weak var technologyoutlet: UIButton!
+    @IBOutlet weak var sportoutlet: UIButton!
+    @IBOutlet weak var musicoutlet: UIButton!
+    @IBOutlet weak var movieoutlet: UIButton!
+    @IBOutlet weak var entertainmentoutlet: UIButton!
+    @IBOutlet weak var policticoutlet: UIButton!
+    @IBOutlet weak var educationoutlet: UIButton!
+    
+    
+    @IBAction func movetomap(sender: AnyObject) {
+        self.performSegueWithIdentifier("interesttomap", sender: sender)
+    }
+    
+    //function for pressing Button for selection
+    func buttonClicked(sender:UIButton)
+    {
+        
+        dispatch_async(dispatch_get_main_queue(), {
+
+            let button = sender as UIButton
+
+            
+            if(button.tag != self.tempbutton1 || button.tag != self.tempbutton2 || button.tag != self.tempbutton3){
+                
+                if(self.tempbutton1 == 0){
+                    button.highlighted = true
+                    self.count = self.count + 1
+                    self.tempbutton1 = button.tag
+                    
+                    return
+                } else if(self.tempbutton1 == button.tag){
+                        button.highlighted = false
+                        self.count = self.count - 1
+                        self.tempbutton1 = 0
+                    
+                    return
+                }
+        
+                if(self.tempbutton2 == 0){
+                    button.highlighted = true
+                    self.count = self.count + 1
+                    self.tempbutton2 = button.tag
+                    
+                    return
+                } else if(self.tempbutton2 == button.tag){
+                    button.highlighted = false
+                    self.count = self.count - 1
+                    self.tempbutton2 = 0
+                    
+                    return
+                }
+                    
+                if(self.tempbutton3 == 0){
+                    button.highlighted = true
+                    self.count = self.count + 1
+                    self.tempbutton3 = button.tag
+                 
+                    return
+                }else if(self.tempbutton3 == button.tag){
+                    button.highlighted = false
+                    self.count = self.count - 1
+                    self.tempbutton3 = 0
+                    
+                    return
+                }
+            }
+            
+            if(self.count == 3) {
+                self.displayMyAlertMessage("Please, pick your only most 3 interests and Enter")
+            }
+        
+        });
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let button = UIButton(type: UIButtonType.System)
-        //button.setTitle("Education", forState: UIControlState.Normal)
-        //button.setImage(UIImage(named: "Education") as UIImage?, forState: UIControlState.Normal)
-        //button.frame = CGRectMake(0,0,60,60)
+        educationoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
         
-        self.view.addSubview(button as UIView)
-        
-        button.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-    }
-    
-    func buttonClicked(sender: UIButton){
-        dispatch_async(dispatch_get_main_queue(), {
-            if (self.Ishighlighted == false){
-                sender.highlighted = true
-                self.Ishighlighted = true
-            } else {
-                sender.highlighted = false
-                self.Ishighlighted = false
-            }
-        })
+        policticoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        entertainmentoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        movieoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        musicoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        sportoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        technologyoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        randomoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        menoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+        womenoutlet.addTarget(self, action: #selector(InterestPage_ViewController.buttonClicked), forControlEvents:.TouchUpInside)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,14 +128,6 @@ class InterestPage_ViewController: UIViewController {
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
