@@ -14,15 +14,18 @@ class Loginpage_ViewController: UIViewController {
     
     
     @IBAction func userLoginButton(sender: AnyObject) {
-        let userPN = userPNlogin.text
-        let userPNstored = NSUserDefaults.standardUserDefaults().stringForKey("UserPhoneNumber")
-        
+        let userNN = userPNlogin.text
+        let userNNstored = NSUserDefaults.standardUserDefaults().stringForKey("UserPhoneNumber")
+
         //check if the login field is empty
-        if(userPN!.isEmpty)
+        if(userNN!.isEmpty)
         {
-            displayMyAlertMessage("Please, Enter your ID number")
+            displayMyAlertMessage("Please, Choose your NickName")
             return
+        } else {
+            self.performSegueWithIdentifier("logintoconnection", sender: sender)
         }
+/*
         //the number entered is matched with registered number
         else if(userPNstored == userPN)
         {
@@ -37,8 +40,9 @@ class Loginpage_ViewController: UIViewController {
         {
             displayMyAlertMessage("The Number entered was not correct. Please, Re-Enter again or Register")
         }
+ */
     }
-    
+
     //alert message function
     func displayMyAlertMessage(userMessage: String)
     {
