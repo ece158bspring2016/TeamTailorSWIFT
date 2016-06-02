@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--loginpage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="loginpage" id="BYZ-38-t0r" customClass="Loginpage_ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,29 +18,113 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default photo" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-HA-MGO">
-                                <rect key="frame" x="67" y="107" width="240" height="128"/>
+                                <rect key="frame" x="67" y="28" width="240" height="128"/>
                             </imageView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="QN0-Ll-BgN">
-                                <rect key="frame" x="168" y="579" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Your NickName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tJ-A2-VtA">
+                                <rect key="frame" x="20" y="189" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your NickName" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="IQ2-Ti-E7Z" userLabel="UserPNlogin">
+                                <rect key="frame" x="20" y="218" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSe-OC-jLw">
+                                <rect key="frame" x="150" y="291" width="75" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50679506067736657" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="7Zg-Hn-2lP" kind="show" identifier="scrollbar" id="m42-HU-Mxu"/>
+                                    <action selector="userLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rhc-5e-RuN"/>
                                 </connections>
-                            </pageControl>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="userPNlogin" destination="IQ2-Ti-E7Z" id="saD-e7-beX"/>
+                        <segue destination="7Zg-Hn-2lP" kind="show" identifier="logintoconnection" id="paB-P3-n6g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="87.5" y="70.5"/>
         </scene>
-        <!--View Controller-->
+        <!--registerpage-->
+        <scene sceneID="o4E-A6-kyR">
+            <objects>
+                <viewController title="registerpage" id="DLl-7w-K0Z" customClass="RegisterPage_ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xpn-5t-XFl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Svg-I0-9ya"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2yS-yZ-tGI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kw-Jn-eCf">
+                                <rect key="frame" x="20" y="102" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZGk-Hs-gVs">
+                                <rect key="frame" x="20" y="131" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nick name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqi-Sw-l5I">
+                                <rect key="frame" x="20" y="169" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ydQ-Ui-I47">
+                                <rect key="frame" x="20" y="198" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0W-tt-Va5">
+                                <rect key="frame" x="147" y="269" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.69219617899999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="RegisterButton:" destination="DLl-7w-K0Z" eventType="touchUpInside" id="PM0-Ks-SQa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-89-M5E">
+                                <rect key="frame" x="72" y="345" width="230" height="30"/>
+                                <state key="normal" title="Already registered? Let login"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtB-5h-geC">
+                                <rect key="frame" x="178" y="316" width="19" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="userNNTextField" destination="ydQ-Ui-I47" id="UWm-va-n4Y"/>
+                        <outlet property="userPNTextField" destination="ZGk-Hs-gVs" id="zfH-TM-Ycv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHo-ZL-coc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87.5" y="895.5"/>
+        </scene>
+        <!--connectionpage-->
         <scene sceneID="1a9-mY-B1r">
             <objects>
-                <viewController id="7Zg-Hn-2lP" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="connectionpage" id="7Zg-Hn-2lP" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TOm-GC-Qyy"/>
                         <viewControllerLayoutGuide type="bottom" id="1b1-wa-1xa"/>
@@ -50,17 +134,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="In1-Q1-Eci">
-                                <rect key="frame" x="156" y="195" width="62" height="30"/>
-                                <state key="normal" title="ON GRID"/>
+                                <rect key="frame" x="153" y="195" width="67" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.46116357108249417" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ON GRID">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="yo4-kJ-43l" kind="show" id="Chb-fc-Y1T"/>
+                                    <action selector="Ongridbutton:" destination="7Zg-Hn-2lP" eventType="touchUpInside" id="Mwe-Np-sxI"/>
+                                    <segue destination="yo4-kJ-43l" kind="show" identifier="ongridtoemoji1" id="lRr-Cv-hcP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-yc-DS5">
                                 <rect key="frame" x="153" y="424" width="67" height="30"/>
-                                <state key="normal" title="OFF GRID"/>
+                                <color key="backgroundColor" red="0.0" green="0.50679506070000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="OFF GRID">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <segue destination="xBx-7M-vAv" kind="show" id="rjk-15-u3Z"/>
+                                    <action selector="offgridbutton:" destination="7Zg-Hn-2lP" eventType="touchUpInside" id="Xia-kD-3fD"/>
+                                    <segue destination="6rp-NH-jb0" kind="show" identifier="offgridtoemoji2" id="Qrd-wJ-SWP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,10 +164,10 @@
             </objects>
             <point key="canvasLocation" x="589.5" y="70.5"/>
         </scene>
-        <!--View Controller-->
+        <!--moodpage1-->
         <scene sceneID="adf-Zl-AyR">
             <objects>
-                <viewController id="yo4-kJ-43l" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emoji1" title="moodpage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yo4-kJ-43l" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7aU-EC-t7X"/>
                         <viewControllerLayoutGuide type="bottom" id="cK1-n8-nBL"/>
@@ -83,37 +175,502 @@
                     <view key="view" contentMode="scaleToFill" id="soF-6P-Ev6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBA-a2-fTq">
+                                <rect key="frame" x="237" y="67" width="75" height="75"/>
+                                <state key="normal" title="Button" image="veryhappy"/>
+                                <connections>
+                                    <action selector="veryhappyimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="pTc-fa-joI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4R-WV-vf5">
+                                <rect key="frame" x="73" y="175" width="75" height="75"/>
+                                <state key="normal" title="Button" image="verysad"/>
+                                <connections>
+                                    <action selector="sadimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="tKk-6Y-XMy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haI-r0-EFZ">
+                                <rect key="frame" x="237" y="175" width="75" height="75"/>
+                                <state key="normal" title="Button" image="verysad2"/>
+                                <connections>
+                                    <action selector="verysadimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Cux-ux-J52"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Xl-q0Q">
+                                <rect key="frame" x="73" y="281" width="75" height="75"/>
+                                <state key="normal" title="Button" image="scared"/>
+                                <connections>
+                                    <action selector="scaredimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="tqg-aS-0JS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cu-Io-9J9">
+                                <rect key="frame" x="237" y="281" width="75" height="75"/>
+                                <state key="normal" title="Button" image="frighten"/>
+                                <connections>
+                                    <action selector="frightenimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="x7J-eq-Ee9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-Mt-UDq">
+                                <rect key="frame" x="73" y="386" width="75" height="75"/>
+                                <state key="normal" title="Button" image="furious"/>
+                                <connections>
+                                    <action selector="furious:" destination="yo4-kJ-43l" eventType="touchUpInside" id="59a-mk-9ZG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbQ-w7-OBr">
+                                <rect key="frame" x="237" y="386" width="75" height="75"/>
+                                <state key="normal" title="Button" image="angry"/>
+                                <connections>
+                                    <action selector="angry:" destination="yo4-kJ-43l" eventType="touchUpInside" id="vdv-kO-G9U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-VS-jv6">
+                                <rect key="frame" x="73" y="495" width="75" height="75"/>
+                                <state key="normal" title="Button" image="depressed"/>
+                                <connections>
+                                    <action selector="depressed:" destination="yo4-kJ-43l" eventType="touchUpInside" id="06i-lV-0al"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-4l-2uK">
+                                <rect key="frame" x="237" y="495" width="75" height="75"/>
+                                <state key="normal" title="Button" image="excited"/>
+                                <connections>
+                                    <action selector="excited:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Dyt-YI-Q4b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdE-xN-Wle">
+                                <rect key="frame" x="73" y="67" width="75" height="75"/>
+                                <state key="normal" title="Button" image="happy"/>
+                                <connections>
+                                    <action selector="happyimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Pfo-Mr-xiP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="8NQ-UA-Ywm" kind="show" identifier="emojitointerest1" id="TQO-41-yS8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNd-Mo-Ldc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.5" y="-383.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="YSj-OM-riw">
+        <!--Interest1-->
+        <scene sceneID="1UA-ts-unz">
             <objects>
-                <viewController id="xBx-7M-vAv" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="interest1" title="Interest1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8NQ-UA-Ywm" customClass="InterestPage_ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HA4-0o-Rfa"/>
-                        <viewControllerLayoutGuide type="bottom" id="t5l-e5-aGl"/>
+                        <viewControllerLayoutGuide type="top" id="jW3-CL-yJO"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bp3-Oo-d2D"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0Dz-ee-Vym">
+                    <view key="view" contentMode="scaleToFill" id="oqb-2O-tik">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Education" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypS-ZN-1BU">
+                                <rect key="frame" x="54" y="28" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Education">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Education" image="Education"/>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-u7-Kh1">
+                                <rect key="frame" x="54" y="144" width="60" height="60"/>
+                                <state key="normal" title="Entertainment" image="Entertainment"/>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-Nc-sET">
+                                <rect key="frame" x="258" y="144" width="60" height="60"/>
+                                <state key="normal" title="Movie" image="Movie"/>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-b6-igf">
+                                <rect key="frame" x="54" y="263" width="60" height="60"/>
+                                <state key="normal" title="Music" image="Music"/>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIW-IF-Yml">
+                                <rect key="frame" x="258" y="263" width="60" height="60"/>
+                                <state key="normal" title="Sport" image="Sport"/>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfP-N6-4rw">
+                                <rect key="frame" x="54" y="377" width="60" height="60"/>
+                                <state key="normal" title="Technology" image="Technology"/>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJw-7D-uvc">
+                                <rect key="frame" x="255" y="377" width="60" height="60"/>
+                                <state key="normal" title="Random" image="Random"/>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K98-2E-Cse">
+                                <rect key="frame" x="54" y="494" width="60" height="60"/>
+                                <state key="normal" title="Men" image="Men"/>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R1-sl-YvS">
+                                <rect key="frame" x="258" y="494" width="60" height="60"/>
+                                <state key="normal" title="Women" image="Women"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-8Q-ZT3">
+                                <rect key="frame" x="46" y="108" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Politic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u6p-xs-Lik">
+                                <rect key="frame" x="262" y="108" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-eM-h7S">
+                                <rect key="frame" x="258" y="28" width="60" height="60"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Politic" image="Political"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entertainment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qsb-Yh-ueE">
+                                <rect key="frame" x="30" y="222" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34h-ky-Dnk">
+                                <rect key="frame" x="263" y="222" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nJ-Zj-AQh">
+                                <rect key="frame" x="59" y="341" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-aV-nsW">
+                                <rect key="frame" x="40" y="455" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kln-5u-vFF">
+                                <rect key="frame" x="256" y="455" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAm-Rf-hpI">
+                                <rect key="frame" x="67" y="571" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Women" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MzX-ZD-ls1">
+                                <rect key="frame" x="256" y="571" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pid-1T-YM0">
+                                <rect key="frame" x="267" y="341" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-Ht-FvK">
+                                <rect key="frame" x="169" y="585" width="37" height="30"/>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="movetomap:" destination="8NQ-UA-Ywm" eventType="touchUpInside" id="ewk-9m-jcm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="educationoutlet" destination="ypS-ZN-1BU" id="4zT-Fq-h50"/>
+                        <outlet property="entertainmentoutlet" destination="Rgq-u7-Kh1" id="B4u-Hm-aL1"/>
+                        <outlet property="menoutlet" destination="K98-2E-Cse" id="zyl-9a-wHe"/>
+                        <outlet property="movieoutlet" destination="Jid-Nc-sET" id="zVt-jn-hnp"/>
+                        <outlet property="musicoutlet" destination="LbG-b6-igf" id="gMK-v7-Ptk"/>
+                        <outlet property="policticoutlet" destination="sTx-eM-h7S" id="zoR-IZ-GAH"/>
+                        <outlet property="randomoutlet" destination="gJw-7D-uvc" id="jaC-BC-EZQ"/>
+                        <outlet property="sportoutlet" destination="EIW-IF-Yml" id="erE-oG-mBF"/>
+                        <outlet property="technologyoutlet" destination="SfP-N6-4rw" id="y9d-Zz-3Pf"/>
+                        <outlet property="womenoutlet" destination="8R1-sl-YvS" id="jG2-Ia-KCl"/>
+                        <segue destination="YgF-xJ-Sps" kind="show" identifier="interesttomap" id="QlQ-8c-Nfz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ta4-NL-FYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617.5" y="-383.5"/>
+        </scene>
+        <!--moodpage2-->
+        <scene sceneID="vPc-uj-Jmf">
+            <objects>
+                <viewController storyboardIdentifier="emoji2" title="moodpage2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6rp-NH-jb0" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="By3-Zy-vFP"/>
+                        <viewControllerLayoutGuide type="bottom" id="fzU-9I-HLr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QjY-pt-hSm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-UZ-Xp1">
+                                <rect key="frame" x="73" y="67" width="75" height="75"/>
+                                <state key="normal" title="Button" image="happy"/>
+                                <connections>
+                                    <action selector="happy1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="ic9-jh-tPQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-dS-RiE">
+                                <rect key="frame" x="237" y="67" width="75" height="75"/>
+                                <state key="normal" title="Button" image="veryhappy"/>
+                                <connections>
+                                    <action selector="veryhappy1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="vXP-Ao-GO6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-vj-OHx">
+                                <rect key="frame" x="237" y="175" width="75" height="75"/>
+                                <state key="normal" title="Button" image="verysad2"/>
+                                <connections>
+                                    <action selector="verysad1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="pZW-14-tAr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO3-1a-T3L">
+                                <rect key="frame" x="73" y="281" width="75" height="75"/>
+                                <state key="normal" title="Button" image="scared"/>
+                                <connections>
+                                    <action selector="scared:" destination="6rp-NH-jb0" eventType="touchUpInside" id="m4H-eL-UnG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05p-G2-H0h">
+                                <rect key="frame" x="237" y="281" width="75" height="75"/>
+                                <state key="normal" title="Button" image="frighten"/>
+                                <connections>
+                                    <action selector="frighten1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="f2F-YH-Cz9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNs-gB-Uk6">
+                                <rect key="frame" x="73" y="386" width="75" height="75"/>
+                                <state key="normal" title="Button" image="furious"/>
+                                <connections>
+                                    <action selector="furious1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="Lxw-32-4yP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-o2-cZa">
+                                <rect key="frame" x="237" y="386" width="75" height="75"/>
+                                <state key="normal" title="Button" image="angry"/>
+                                <connections>
+                                    <action selector="angry1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="KGb-hu-CcZ"/>
+                                    <action selector="angry:" destination="6rp-NH-jb0" eventType="touchUpInside" id="lMf-Xy-zDL"/>
+                                    <action selector="excited1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="lvd-WS-Q3V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-3v-4Qd">
+                                <rect key="frame" x="73" y="495" width="75" height="75"/>
+                                <state key="normal" title="Button" image="depressed"/>
+                                <connections>
+                                    <action selector="depressed1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="tpy-BV-874"/>
+                                    <action selector="depressed:" destination="6rp-NH-jb0" eventType="touchUpInside" id="9Lf-RO-3S1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M6-HI-Ury">
+                                <rect key="frame" x="237" y="495" width="75" height="75"/>
+                                <state key="normal" title="Button" image="excited"/>
+                                <connections>
+                                    <action selector="excited:" destination="6rp-NH-jb0" eventType="touchUpInside" id="EqT-VA-5RX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOG-Ax-ecq">
+                                <rect key="frame" x="73" y="175" width="75" height="75"/>
+                                <state key="normal" title="Button" image="verysad"/>
+                                <connections>
+                                    <action selector="sad1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="SVj-t6-Zb0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="p5G-WK-bRA" kind="show" identifier="emojitointerest2" id="UeY-XN-fDZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQe-BQ-X7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1101.5" y="483.5"/>
+        </scene>
+        <!--Interest2-->
+        <scene sceneID="Imy-7Y-vs9">
+            <objects>
+                <viewController storyboardIdentifier="interest2" title="Interest2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p5G-WK-bRA" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jpU-CU-tzH"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ia-xg-Yhb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kg6-zx-aQK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiW-JS-o8Z">
+                                <rect key="frame" x="54" y="28" width="60" height="60"/>
+                                <state key="normal" title="Education" image="Education"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-QF-GNT">
+                                <rect key="frame" x="54" y="144" width="60" height="60"/>
+                                <state key="normal" title="Entertainment" image="Entertainment"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-37-puB">
+                                <rect key="frame" x="258" y="144" width="60" height="60"/>
+                                <state key="normal" title="Movie" image="Movie"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m3-qq-QnP">
+                                <rect key="frame" x="54" y="263" width="60" height="60"/>
+                                <state key="normal" title="Music" image="Music"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-tV-L8Q">
+                                <rect key="frame" x="258" y="263" width="60" height="60"/>
+                                <state key="normal" title="Sport" image="Sport"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-AY-fve">
+                                <rect key="frame" x="54" y="377" width="60" height="60"/>
+                                <state key="normal" title="Technology" image="Technology"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhh-fH-m6G">
+                                <rect key="frame" x="255" y="377" width="60" height="60"/>
+                                <state key="normal" title="Random" image="Random"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v43-UL-Nfu">
+                                <rect key="frame" x="54" y="494" width="60" height="60"/>
+                                <state key="normal" title="Men" image="Men"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-qj-5tE">
+                                <rect key="frame" x="258" y="494" width="60" height="60"/>
+                                <state key="normal" title="Woment" image="Women"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-0J-m9h">
+                                <rect key="frame" x="46" y="108" width="77" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Politic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-7U-Mii">
+                                <rect key="frame" x="262" y="108" width="47" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-Pu-9Bi">
+                                <rect key="frame" x="258" y="28" width="60" height="60"/>
+                                <state key="normal" title="Politic" image="Political"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entertainment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwA-xk-beH">
+                                <rect key="frame" x="30" y="222" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-XE-5OF">
+                                <rect key="frame" x="263" y="222" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evt-GF-fgG">
+                                <rect key="frame" x="59" y="341" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-Dk-WfM">
+                                <rect key="frame" x="40" y="455" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Random" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-El-pQf">
+                                <rect key="frame" x="256" y="455" width="64" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Men" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-Ud-5CW">
+                                <rect key="frame" x="67" y="571" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Women" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2H-yR-3uf">
+                                <rect key="frame" x="256" y="571" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP7-4N-Cq1">
+                                <rect key="frame" x="267" y="341" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YeI-yK-dca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgd-Wo-SwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5" y="579.5"/>
+            <point key="canvasLocation" x="1625.5" y="483.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HEY-5r-qNw">
+            <objects>
+                <viewController id="YgF-xJ-Sps" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xql-U3-jta"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q9U-pE-tiT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tke-Zc-ubk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-f4-cCu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-Yi-yLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2185.5" y="-383.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Education" width="168" height="161"/>
+        <image name="Entertainment" width="225" height="174"/>
+        <image name="Men" width="197" height="191"/>
+        <image name="Movie" width="274" height="253"/>
+        <image name="Music" width="201" height="201"/>
+        <image name="Political" width="197" height="195"/>
+        <image name="Random" width="191" height="190"/>
+        <image name="Sport" width="83" height="83"/>
+        <image name="Technology" width="196" height="194"/>
+        <image name="Women" width="199" height="199"/>
+        <image name="angry" width="79" height="75"/>
         <image name="default photo" width="224" height="154"/>
+        <image name="depressed" width="77" height="78"/>
+        <image name="excited" width="77" height="76"/>
+        <image name="frighten" width="77" height="77"/>
+        <image name="furious" width="78" height="74"/>
+        <image name="happy" width="78" height="78"/>
+        <image name="scared" width="78" height="78"/>
+        <image name="veryhappy" width="77" height="78"/>
+        <image name="verysad" width="77" height="77"/>
+        <image name="verysad2" width="77" height="76"/>
     </resources>
 </document>
