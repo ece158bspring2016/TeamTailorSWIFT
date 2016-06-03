@@ -20,7 +20,7 @@ class Loginpage_ViewController: UIViewController {
         //check if the login field is empty
         if(userNN!.isEmpty)
         {
-            displayMyAlertMessage("Please, Choose your NickName")
+            displayMyAlertMessage("Please choose your NickName")
             return
         } else {
             self.performSegueWithIdentifier("logintoconnection", sender: sender)
