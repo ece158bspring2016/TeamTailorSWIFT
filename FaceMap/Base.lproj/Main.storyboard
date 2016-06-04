@@ -322,7 +322,7 @@
                                 <rect key="frame" x="151" y="582" width="73" height="33"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="0.83137254901960789" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Enter">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="movetomap:" destination="8NQ-UA-Ywm" eventType="touchUpInside" id="ewk-9m-jcm"/>
