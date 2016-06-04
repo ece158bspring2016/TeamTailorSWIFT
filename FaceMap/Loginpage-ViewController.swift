@@ -7,15 +7,39 @@
 //
 
 import UIKit
+import Firebase
+import CoreLocation
+import MapKit
 
-class Loginpage_ViewController: UIViewController {
+    var ref = Firebase(url: "https://sweltering-inferno-8889.firebaseio.com")
+
+class Loginpage_ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var userPNlogin: UITextField!
     
+    let locationManager = CLLocationManager()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print("landingpage laoded")
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        print("loaded")
+    }
     
     @IBAction func userLoginButton(sender: AnyObject) {
         let userNN = userPNlogin.text
-        let userNNstored = NSUserDefaults.standardUserDefaults().stringForKey("UserPhoneNumber")
 
         //check if the login field is empty
         if(userNN!.isEmpty)
@@ -23,26 +47,42 @@ class Loginpage_ViewController: UIViewController {
             displayMyAlertMessage("Please choose your NickName")
             return
         } else {
-            self.performSegueWithIdentifier("logintoconnection", sender: sender)
-        }
-/*
-        //the number entered is matched with registered number
-        else if(userPNstored == userPN)
-        {
-            //log in successful
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "userPN")
-            NSUserDefaults.standardUserDefaults().synchronize()
             
-            self.performSegueWithIdentifier("logintoconnection", sender: sender)
+            myUser.Nickname = userNN!
+            myUser.Feeling = 0
+            myUser.Interest1 = 0
+            myUser.Interest2 = 0
+            myUser.Interest3 = 0
+            self.performSegueWithIdentifier("logintomood", sender: sender)
         }
-        //the number entered is not correct
-        else
-        {
-            displayMyAlertMessage("The Number entered was not correct. Please, Re-Enter again or Register")
-        }
- */
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        self.locationManager.stopUpdatingLocation()
+        
+        let latestLocation = locations.last
+        
+        let latitude = String(format: "%.4f", latestLocation!.coordinate.latitude)
+        let longitude = String(format: "%.4f", latestLocation!.coordinate.longitude)
+        
+        myUser.setLocation(latestLocation!.coordinate.latitude,
+                           long: latestLocation!.coordinate.longitude)
+        
+        
+        print("Latitude: \(latitude)")
+        print("Longitude: \(longitude)")
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location " + error.localizedDescription)
     }
 
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     //alert message function
     func displayMyAlertMessage(userMessage: String)
     {
@@ -53,27 +93,4 @@ class Loginpage_ViewController: UIViewController {
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

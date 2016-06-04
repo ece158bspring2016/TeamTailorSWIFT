@@ -36,6 +36,7 @@
                                 </state>
                                 <connections>
                                     <action selector="userLoginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rhc-5e-RuN"/>
+                                    <segue destination="yo4-kJ-43l" kind="show" identifier="logintomood" id="MmT-qk-VSf"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plane" translatesAutoresizingMaskIntoConstraints="NO" id="mlw-HA-MGO">
@@ -47,86 +48,16 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="userPNlogin" destination="IQ2-Ti-E7Z" id="saD-e7-beX"/>
-                        <segue destination="7Zg-Hn-2lP" kind="show" identifier="logintoconnection" id="paB-P3-n6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="87.5" y="70.5"/>
         </scene>
-        <!--registerpage-->
-        <scene sceneID="o4E-A6-kyR">
-            <objects>
-                <viewController title="registerpage" id="DLl-7w-K0Z" customClass="RegisterPage_ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xpn-5t-XFl"/>
-                        <viewControllerLayoutGuide type="bottom" id="Svg-I0-9ya"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2yS-yZ-tGI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Kw-Jn-eCf">
-                                <rect key="frame" x="20" y="160" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99215686270000003" green="0.87843137250000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Phone Number" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ZGk-Hs-gVs">
-                                <rect key="frame" x="20" y="196" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nick name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqi-Sw-l5I">
-                                <rect key="frame" x="20" y="251" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99215686270000003" green="0.87843137250000003" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="ydQ-Ui-I47">
-                                <rect key="frame" x="20" y="280" width="335" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0W-tt-Va5">
-                                <rect key="frame" x="147" y="356" width="80" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.69219617899999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="RegisterButton:" destination="DLl-7w-K0Z" eventType="touchUpInside" id="PM0-Ks-SQa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9M7-89-M5E">
-                                <rect key="frame" x="72" y="442" width="230" height="30"/>
-                                <state key="normal" title="Already registered? Let login">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtB-5h-geC">
-                                <rect key="frame" x="178" y="413" width="19" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1764705882" green="0.43529411759999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="userNNTextField" destination="ydQ-Ui-I47" id="UWm-va-n4Y"/>
-                        <outlet property="userPNTextField" destination="ZGk-Hs-gVs" id="zfH-TM-Ycv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XHo-ZL-coc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="87.5" y="895.5"/>
-        </scene>
         <!--connectionpage-->
         <scene sceneID="1a9-mY-B1r">
             <objects>
-                <viewController title="connectionpage" id="7Zg-Hn-2lP" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="connectionpage" id="7Zg-Hn-2lP" customClass="NetworkSelection" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TOm-GC-Qyy"/>
                         <viewControllerLayoutGuide type="bottom" id="1b1-wa-1xa"/>
@@ -141,8 +72,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Ongridbutton:" destination="7Zg-Hn-2lP" eventType="touchUpInside" id="Mwe-Np-sxI"/>
-                                    <segue destination="yo4-kJ-43l" kind="show" identifier="ongridtoemoji1" id="lRr-Cv-hcP"/>
+                                    <action selector="onGridPressed:" destination="7Zg-Hn-2lP" eventType="touchUpInside" id="y8U-K7-iC5"/>
+                                    <segue destination="YgF-xJ-Sps" kind="show" identifier="ongridtomap" id="to7-mN-AFg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-yc-DS5">
@@ -150,10 +81,6 @@
                                 <state key="normal" image="bluetooth">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <action selector="offgridbutton:" destination="7Zg-Hn-2lP" eventType="touchUpInside" id="Xia-kD-3fD"/>
-                                    <segue destination="6rp-NH-jb0" kind="show" identifier="offgridtoemoji2" id="Qrd-wJ-SWP"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Off-Grid" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ld9-Js-ulT">
                                 <rect key="frame" x="139" y="523" width="97" height="30"/>
@@ -176,12 +103,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OK-aG-5He" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589.5" y="70.5"/>
+            <point key="canvasLocation" x="1555.5" y="70.5"/>
         </scene>
         <!--moodpage1-->
         <scene sceneID="adf-Zl-AyR">
             <objects>
-                <viewController storyboardIdentifier="emoji1" title="moodpage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yo4-kJ-43l" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="emoji1" title="moodpage1" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yo4-kJ-43l" customClass="MoodViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7aU-EC-t7X"/>
                         <viewControllerLayoutGuide type="bottom" id="cK1-n8-nBL"/>
@@ -190,74 +117,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBA-a2-fTq">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XBA-a2-fTq">
                                 <rect key="frame" x="237" y="67" width="75" height="75"/>
                                 <state key="normal" title="Button" image="loveyellow"/>
                                 <connections>
-                                    <action selector="veryhappyimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="pTc-fa-joI"/>
+                                    <action selector="imageOne:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Jur-Fn-qYQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4R-WV-vf5">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4R-WV-vf5">
                                 <rect key="frame" x="73" y="175" width="75" height="75"/>
                                 <state key="normal" title="Button" image="wonderful"/>
                                 <connections>
-                                    <action selector="sadimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="tKk-6Y-XMy"/>
+                                    <action selector="imageTwo:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Ccx-f3-38S"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haI-r0-EFZ">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haI-r0-EFZ">
                                 <rect key="frame" x="237" y="175" width="75" height="75"/>
                                 <state key="normal" title="Button" image="wink"/>
                                 <connections>
-                                    <action selector="verysadimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Cux-ux-J52"/>
+                                    <action selector="imageThree:" destination="yo4-kJ-43l" eventType="touchUpInside" id="EoA-by-tBZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Xl-q0Q">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z88-Xl-q0Q">
                                 <rect key="frame" x="73" y="281" width="75" height="75"/>
                                 <state key="normal" title="Button" image="angryyellow"/>
                                 <connections>
-                                    <action selector="scaredimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="tqg-aS-0JS"/>
+                                    <action selector="imageFour:" destination="yo4-kJ-43l" eventType="touchUpInside" id="GRz-Ou-FQO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cu-Io-9J9">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cu-Io-9J9">
                                 <rect key="frame" x="237" y="281" width="75" height="75"/>
                                 <state key="normal" title="Button" image="boring"/>
                                 <connections>
-                                    <action selector="frightenimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="x7J-eq-Ee9"/>
+                                    <action selector="imageFive:" destination="yo4-kJ-43l" eventType="touchUpInside" id="uAz-pK-sDJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-Mt-UDq">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGa-Mt-UDq">
                                 <rect key="frame" x="73" y="386" width="75" height="75"/>
                                 <state key="normal" title="Button" image="tired"/>
                                 <connections>
-                                    <action selector="furious:" destination="yo4-kJ-43l" eventType="touchUpInside" id="59a-mk-9ZG"/>
+                                    <action selector="imageSix:" destination="yo4-kJ-43l" eventType="touchUpInside" id="qC7-lD-uaD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbQ-w7-OBr">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbQ-w7-OBr">
                                 <rect key="frame" x="237" y="386" width="75" height="75"/>
                                 <state key="normal" title="Button" image="mehyellow"/>
                                 <connections>
-                                    <action selector="angry:" destination="yo4-kJ-43l" eventType="touchUpInside" id="vdv-kO-G9U"/>
+                                    <action selector="imageSeven:" destination="yo4-kJ-43l" eventType="touchUpInside" id="z6R-63-hIn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-VS-jv6">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfe-VS-jv6">
                                 <rect key="frame" x="73" y="495" width="75" height="75"/>
                                 <state key="normal" title="Button" image="silent"/>
                                 <connections>
-                                    <action selector="depressed:" destination="yo4-kJ-43l" eventType="touchUpInside" id="06i-lV-0al"/>
+                                    <action selector="imageEight:" destination="yo4-kJ-43l" eventType="touchUpInside" id="QdU-VH-t1E"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-4l-2uK">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJb-4l-2uK">
                                 <rect key="frame" x="237" y="495" width="75" height="75"/>
                                 <state key="normal" title="Button" image="ninja"/>
                                 <connections>
-                                    <action selector="excited:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Dyt-YI-Q4b"/>
+                                    <action selector="imageNine:" destination="yo4-kJ-43l" eventType="touchUpInside" id="SJk-gY-mvj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdE-xN-Wle">
                                 <rect key="frame" x="73" y="67" width="75" height="75"/>
                                 <state key="normal" title="Button" image="happyyellow"/>
                                 <connections>
-                                    <action selector="happyimage:" destination="yo4-kJ-43l" eventType="touchUpInside" id="Pfo-Mr-xiP"/>
+                                    <action selector="imageZero:" destination="yo4-kJ-43l" eventType="touchUpInside" id="khU-J8-hXa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -272,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNd-Mo-Ldc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5" y="-383.5"/>
+            <point key="canvasLocation" x="563.5" y="70.5"/>
         </scene>
         <!--Interest1-->
         <scene sceneID="1UA-ts-unz">
@@ -286,7 +213,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Education" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypS-ZN-1BU">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Education" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypS-ZN-1BU">
                                 <rect key="frame" x="54" y="28" width="60" height="60"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Education">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
@@ -294,35 +221,35 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Education" image="graduate"/>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-u7-Kh1">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgq-u7-Kh1">
                                 <rect key="frame" x="54" y="144" width="60" height="60"/>
                                 <state key="normal" title="Entertainment" image="mountains"/>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-Nc-sET">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jid-Nc-sET">
                                 <rect key="frame" x="258" y="144" width="60" height="60"/>
                                 <state key="normal" title="Movie" image="Movie"/>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-b6-igf">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-b6-igf">
                                 <rect key="frame" x="54" y="263" width="60" height="60"/>
                                 <state key="normal" title="Music" image="violin"/>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIW-IF-Yml">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIW-IF-Yml">
                                 <rect key="frame" x="258" y="263" width="60" height="60"/>
                                 <state key="normal" title="Sport" image="football"/>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfP-N6-4rw">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfP-N6-4rw">
                                 <rect key="frame" x="54" y="377" width="60" height="60"/>
                                 <state key="normal" title="Technology" image="learning"/>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJw-7D-uvc">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gJw-7D-uvc">
                                 <rect key="frame" x="255" y="377" width="60" height="60"/>
                                 <state key="normal" title="Random" image="book"/>
                             </button>
-                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K98-2E-Cse">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K98-2E-Cse">
                                 <rect key="frame" x="54" y="494" width="60" height="60"/>
                                 <state key="normal" title="Men" image="Arts"/>
                             </button>
-                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R1-sl-YvS">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8R1-sl-YvS">
                                 <rect key="frame" x="258" y="494" width="60" height="60"/>
                                 <state key="normal" title="Others" image="owl"/>
                             </button>
@@ -338,7 +265,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-eM-h7S">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTx-eM-h7S">
                                 <rect key="frame" x="258" y="28" width="60" height="60"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Politic" image="chess"/>
@@ -399,6 +326,7 @@
                                 </state>
                                 <connections>
                                     <action selector="movetomap:" destination="8NQ-UA-Ywm" eventType="touchUpInside" id="ewk-9m-jcm"/>
+                                    <segue destination="7Zg-Hn-2lP" kind="show" identifier="interesttoconnection" id="XhZ-qG-xc2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -415,237 +343,35 @@
                         <outlet property="sportoutlet" destination="EIW-IF-Yml" id="erE-oG-mBF"/>
                         <outlet property="technologyoutlet" destination="SfP-N6-4rw" id="y9d-Zz-3Pf"/>
                         <outlet property="womenoutlet" destination="8R1-sl-YvS" id="jG2-Ia-KCl"/>
-                        <segue destination="YgF-xJ-Sps" kind="show" identifier="interesttomap" id="QlQ-8c-Nfz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ta4-NL-FYs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617.5" y="-383.5"/>
+            <point key="canvasLocation" x="1087.5" y="70.5"/>
         </scene>
-        <!--moodpage2-->
-        <scene sceneID="vPc-uj-Jmf">
+        <!--Chat View Controller-->
+        <scene sceneID="E4o-YJ-HAk">
             <objects>
-                <viewController storyboardIdentifier="emoji2" title="moodpage2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6rp-NH-jb0" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qQN-KQ-L7L" customClass="ChatViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="By3-Zy-vFP"/>
-                        <viewControllerLayoutGuide type="bottom" id="fzU-9I-HLr"/>
+                        <viewControllerLayoutGuide type="top" id="fRZ-6C-jCD"/>
+                        <viewControllerLayoutGuide type="bottom" id="cCR-SL-Qsm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QjY-pt-hSm">
+                    <view key="view" contentMode="scaleToFill" id="tLm-Bw-wBY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-UZ-Xp1">
-                                <rect key="frame" x="73" y="67" width="75" height="75"/>
-                                <state key="normal" title="Button" image="happyyellow"/>
-                                <connections>
-                                    <action selector="happy1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="ic9-jh-tPQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-dS-RiE">
-                                <rect key="frame" x="237" y="67" width="75" height="75"/>
-                                <state key="normal" title="Button" image="loveyellow"/>
-                                <connections>
-                                    <action selector="veryhappy1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="vXP-Ao-GO6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFM-vj-OHx">
-                                <rect key="frame" x="237" y="175" width="75" height="75"/>
-                                <state key="normal" title="Button" image="wink"/>
-                                <connections>
-                                    <action selector="verysad1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="pZW-14-tAr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WO3-1a-T3L">
-                                <rect key="frame" x="73" y="281" width="75" height="75"/>
-                                <state key="normal" title="Button" image="angryyellow"/>
-                                <connections>
-                                    <action selector="scared:" destination="6rp-NH-jb0" eventType="touchUpInside" id="m4H-eL-UnG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05p-G2-H0h">
-                                <rect key="frame" x="237" y="281" width="75" height="75"/>
-                                <state key="normal" title="Button" image="boring"/>
-                                <connections>
-                                    <action selector="frighten1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="f2F-YH-Cz9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNs-gB-Uk6">
-                                <rect key="frame" x="73" y="386" width="75" height="75"/>
-                                <state key="normal" title="Button" image="tired"/>
-                                <connections>
-                                    <action selector="furious1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="Lxw-32-4yP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-o2-cZa">
-                                <rect key="frame" x="237" y="386" width="75" height="75"/>
-                                <state key="normal" title="Button" image="mehyellow"/>
-                                <connections>
-                                    <action selector="angry1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="KGb-hu-CcZ"/>
-                                    <action selector="angry:" destination="6rp-NH-jb0" eventType="touchUpInside" id="lMf-Xy-zDL"/>
-                                    <action selector="excited1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="lvd-WS-Q3V"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahJ-3v-4Qd">
-                                <rect key="frame" x="73" y="495" width="75" height="75"/>
-                                <state key="normal" title="Button" image="silent"/>
-                                <connections>
-                                    <action selector="depressed1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="tpy-BV-874"/>
-                                    <action selector="depressed:" destination="6rp-NH-jb0" eventType="touchUpInside" id="9Lf-RO-3S1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M6-HI-Ury">
-                                <rect key="frame" x="237" y="495" width="75" height="75"/>
-                                <state key="normal" title="Button" image="ninja"/>
-                                <connections>
-                                    <action selector="excited:" destination="6rp-NH-jb0" eventType="touchUpInside" id="EqT-VA-5RX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOG-Ax-ecq">
-                                <rect key="frame" x="73" y="175" width="75" height="75"/>
-                                <state key="normal" title="Button" image="wonderful"/>
-                                <connections>
-                                    <action selector="sad1:" destination="6rp-NH-jb0" eventType="touchUpInside" id="SVj-t6-Zb0"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1764705882" green="0.43529411759999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="p5G-WK-bRA" kind="show" identifier="emojitointerest2" id="UeY-XN-fDZ"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="rzB-N7-KQd"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sQe-BQ-X7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ol-1y-2vG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1101.5" y="483.5"/>
+            <point key="canvasLocation" x="2892" y="-862"/>
         </scene>
-        <!--Interest2-->
-        <scene sceneID="Imy-7Y-vs9">
-            <objects>
-                <viewController storyboardIdentifier="interest2" title="Interest2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p5G-WK-bRA" customClass="ViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jpU-CU-tzH"/>
-                        <viewControllerLayoutGuide type="bottom" id="6ia-xg-Yhb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Kg6-zx-aQK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiW-JS-o8Z">
-                                <rect key="frame" x="54" y="28" width="60" height="60"/>
-                                <state key="normal" title="Education" image="graduate"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-QF-GNT">
-                                <rect key="frame" x="54" y="144" width="60" height="60"/>
-                                <state key="normal" title="Entertainment" image="mountains"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-37-puB">
-                                <rect key="frame" x="258" y="144" width="60" height="60"/>
-                                <state key="normal" title="Movie" image="Movie"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m3-qq-QnP">
-                                <rect key="frame" x="54" y="263" width="60" height="60"/>
-                                <state key="normal" title="Music" image="violin"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ua-tV-L8Q">
-                                <rect key="frame" x="258" y="263" width="60" height="60"/>
-                                <state key="normal" title="Sport" image="football"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BV6-AY-fve">
-                                <rect key="frame" x="54" y="377" width="60" height="60"/>
-                                <state key="normal" title="Technology" image="learning"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhh-fH-m6G">
-                                <rect key="frame" x="255" y="377" width="60" height="60"/>
-                                <state key="normal" title="Random" image="book"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v43-UL-Nfu">
-                                <rect key="frame" x="54" y="494" width="60" height="60"/>
-                                <state key="normal" title="Men" image="Arts"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8r-qj-5tE">
-                                <rect key="frame" x="258" y="494" width="60" height="60"/>
-                                <state key="normal" title="Others" image="owl"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Education" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-0J-m9h">
-                                <rect key="frame" x="46" y="96" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Politic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQc-7U-Mii">
-                                <rect key="frame" x="263" y="96" width="47" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8r5-Pu-9Bi">
-                                <rect key="frame" x="258" y="28" width="60" height="60"/>
-                                <state key="normal" title="Politic" image="chess"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adventures" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwA-xk-beH">
-                                <rect key="frame" x="40" y="212" width="87" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rna-XE-5OF">
-                                <rect key="frame" x="263" y="212" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Music" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evt-GF-fgG">
-                                <rect key="frame" x="54" y="331" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-Dk-WfM">
-                                <rect key="frame" x="40" y="445" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1OI-El-pQf">
-                                <rect key="frame" x="263" y="445" width="48" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Art" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaN-Ud-5CW">
-                                <rect key="frame" x="71" y="562" width="24" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eP7-4N-Cq1">
-                                <rect key="frame" x="267" y="331" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Others" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2H-yR-3uf">
-                                <rect key="frame" x="259" y="562" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.1764705882" green="0.43529411759999997" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgd-Wo-SwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1625.5" y="483.5"/>
-        </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="HEY-5r-qNw">
             <objects>
-                <viewController id="YgF-xJ-Sps" sceneMemberID="viewController">
+                <viewController id="YgF-xJ-Sps" customClass="MapViewController" customModule="FaceMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xql-U3-jta"/>
                         <viewControllerLayoutGuide type="bottom" id="Q9U-pE-tiT"/>
@@ -661,10 +387,32 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mapView" destination="Iur-f4-cCu" id="9ni-tU-V6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-Yi-yLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185.5" y="-383.5"/>
+            <point key="canvasLocation" x="2104.5" y="-159.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bwu-1F-q63">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NG8-kj-omj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8lN-gK-CF0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qQN-KQ-L7L" kind="relationship" relationship="rootViewController" id="LLq-Zo-8dn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfX-o6-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435.5" y="-862.5"/>
         </scene>
     </scenes>
     <resources>

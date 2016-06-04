@@ -29,7 +29,12 @@ class InterestPage_ViewController: UIViewController {
     
     
     @IBAction func movetomap(sender: AnyObject) {
-        self.performSegueWithIdentifier("interesttomap", sender: sender)
+        
+        myUser.Interest1 = tempbutton1
+        myUser.Interest2 = tempbutton2
+        myUser.Interest3 = tempbutton3
+        
+        self.performSegueWithIdentifier("interesttoconnection", sender: sender)
     }
     
     //function for pressing Button for selection
@@ -123,7 +128,22 @@ class InterestPage_ViewController: UIViewController {
         myAlert.addAction(okAction)
         self.presentViewController(myAlert, animated: true, completion: nil)
     }
-    
-
-
+/*
+    // prepare to get the data, suchas userid and display nickname
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        //retrieve destination viewcontroller from segue and cast it to UINavigationcontroller
+        let navVc = segue.destinationViewController as! UINavigationController
+        
+        //cast  first viewcontroller of the uinavigationcontroller as chatviewcontroller
+        let chatVc = navVc.viewControllers.first as! ChatViewController
+        
+        //assign the local id to chatVc.senderId to locate the message
+        chatVc.senderId = ref.authData.uid
+        
+        //display the user nickname in chat room
+        chatVc.senderDisplayName = myUser.Nickname
+    }
+*/
 }
