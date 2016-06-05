@@ -8,10 +8,12 @@
 
 import UIKit
 import Firebase
+import MultipeerConnectivity
 
 class NetworkSelection: UIViewController {
     
-
+    var mpcManager: MPCManager!
+    
     @IBAction func onGridPressed(sender: AnyObject) {
         ref.authAnonymouslyWithCompletionBlock { error, authData in
             if error != nil {
@@ -37,4 +39,9 @@ class NetworkSelection: UIViewController {
         }
         performSegueWithIdentifier("ongridtomap", sender: sender)
     }
+    
+    @IBAction func offGridPressed(sender: UIButton) {
+        
+    }
+    
 }
