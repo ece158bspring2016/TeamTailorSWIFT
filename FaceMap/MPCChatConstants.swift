@@ -8,7 +8,7 @@
 
 import Foundation
 
-let kAppName                                            = "mpcchat"
+let kAppName                                            = "FaceMap"
 
 // MARK: - SendReceive Dictionary terms
 let kCommunicationsMessageTerm                         = "message"

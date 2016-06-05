@@ -152,6 +152,7 @@
 				299F6BA91D03981900FEB75A /* MPCChatViewController.swift */,
 				299F6BAA1D03981900FEB75A /* MPCManager.swift */,
 				299F6BAB1D03981900FEB75A /* MPCViewController.swift */,
+				B6B7B7F31CD56F07004B62BB /* Loginpage-ViewController.swift */,
 				B662EE721D02F77C00E30F89 /* VCMapView.swift */,
 				B662EE701D02F24D00E30F89 /* ChatViewController.swift */,
 				B662EE6E1D02E45A00E30F89 /* NetworkSelection.swift */,
@@ -165,7 +166,6 @@
 				6E744EAB1CC1CB24009D3F9C /* Info.plist */,
 				6E744EA31CC1CB24009D3F9C /* FaceMap.xcdatamodeld */,
 				B6B7B7F11CD2BAE0004B62BB /* RegisterPage-ViewController.swift */,
-				B6B7B7F31CD56F07004B62BB /* Loginpage-ViewController.swift */,
 				B63BCC421CD960D0005BAE23 /* InterestPage-ViewController.swift */,
 				B662EE741D03096600E30F89 /* MoodViewController.swift */,
 			);
@@ -290,7 +290,7 @@
 				TargetAttributes = {
 					6E744E981CC1CB24009D3F9C = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 85K8U9NJ6B;
+						DevelopmentTeam = Q76L689MGC;
 					};
 					6E744EAF1CC1CB24009D3F9C = {
 						CreatedOnToolsVersion = 7.3;
@@ -644,7 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.158b.do;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.158b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -659,7 +659,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceMap/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.158b.do;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.ucsd.158b;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
