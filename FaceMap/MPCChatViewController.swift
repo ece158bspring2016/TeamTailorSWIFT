@@ -81,7 +81,6 @@ class MPCChatViewController: UIViewController, UITextFieldDelegate, UITableViewD
             if sender == kCommunicationsSelfTerm{
                 //cell.backgroundView = UIImageView(image: UIImage(named: "bubble_stroked"))
                 cell.textLabel?.textAlignment = .Right
-            
                 //senderLabelText = "I said:"
                 //cell.detailTextLabel?.text = "I said:"
                 //senderColor = UIColor.purpleColor()
@@ -203,6 +202,9 @@ class MPCChatViewController: UIViewController, UITextFieldDelegate, UITableViewD
                 }
                 
                 alert.addAction(doneAction)
+                
+                //self.performSegueWithIdentifier("segueDoneChatting", sender: doneAction)
+                
                 
                 NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
                     self.presentViewController(alert, animated: true, completion: nil)

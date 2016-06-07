@@ -59,14 +59,14 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer")! as UITableViewCell
         cell.textLabel?.text = appDelagate.mpcManager.foundPeers[indexPath.row].displayName
         
-        print("in tableView testing dict")
-        let feels : String
-        feels = appDelagate.mpcManager.dict[appDelagate.mpcManager.foundPeers[indexPath.row]]!
-        print(feels)
+        //print("in tableView testing dict")
+        //let feels : String
+        //feels = appDelagate.mpcManager.dict[appDelagate.mpcManager.foundPeers[indexPath.row]]!
+        //print(feels)
         
         
-        let image : UIImage = UIImage(named: feels)!
-        cell.imageView?.image = image
+        //let image : UIImage = UIImage(named: feels)!
+        //cell.imageView?.image = image
         
         cell.textLabel?.font = UIFont (name: "Avenir Book", size: 20.0)
         return cell

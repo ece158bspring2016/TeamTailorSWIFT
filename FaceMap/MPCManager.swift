@@ -29,12 +29,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var advertiser: MCNearbyServiceAdvertiser!
     var foundPeers = [MCPeerID]()
     var invitationHandler: ((Bool, MCSession) ->Void)!
+    var connectionState: Int
     
     var dict = [MCPeerID : String]()
     
     override init(){
         
-        
+        connectionState = -1
         super.init()
         
         //Initialize variables 
@@ -93,7 +94,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         print(info?.enumerate())
         
         
-        dict[peerID] = info!["emotion"]
+        //dict[peerID] = info!["emotion"]
         /*
         print("dictionary...")
         for (key, val) in dict {
@@ -164,21 +165,36 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     //connection established between two peers, 
     //after the first one has invited the second
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+        print("!!!!STATE!!!!")
         switch state{
         case MCSessionState.Connected:
             print("Connected to session: \(session)")
             delegate?.connectedWithPeer(peerID)
-            
+            connectionState = 0
         case MCSessionState.Connecting:
             print("Connecting to session \(session)")
-            
+            connectionState = 1
         case MCSessionState.NotConnected:
+            connectionState = 2
             print("Not connected to session \(session)")
+
+            /*
+            let alert = UIAlertView()
+            alert.title = "Connection Terminated"
+            //alert.message = "Connection failed"
+            alert.addButtonWithTitle("Dismiss")
+            alert.show()
+*/
             let messageDictionary: [String: String] = [kCommunicationsMessageTerm: kCommunicationsLostConnectionTerm]
             let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(messageDictionary)
             let dictionary: [String: AnyObject] = [kCommunicationsDataTerm : dataToSend, kCommunicationsFromPeerTerm: peerID]
             NSNotificationCenter.defaultCenter().postNotificationName("receivedMPCChatDataNotification", object: dictionary)
+            
         }
+        
+        
+        
+        print(connectionState)
     }
     
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
