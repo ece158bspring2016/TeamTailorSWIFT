@@ -69,30 +69,30 @@ class MPCChatViewController: UIViewController, UITextFieldDelegate, UITableViewD
     }
     
     
+    //customizations of tableViewCell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("idCell") as! MPCChatTableViewCell
-        
-        
-        
         let currentMessage = messagesArray[indexPath.row] as Dictionary<String, String>
         
         if let sender = currentMessage[kCommunicationsSenderTerm] {
-            var senderLabelText: String
-            var senderColor: UIColor
+            //var senderLabelText: String
+            //var senderColor: UIColor
             
             if sender == kCommunicationsSelfTerm{
+                //cell.backgroundView = UIImageView(image: UIImage(named: "bubble_stroked"))
                 cell.textLabel?.textAlignment = .Right
-                
-                senderLabelText = "I said:"
-                senderColor = UIColor.purpleColor()
+            
+                //senderLabelText = "I said:"
+                //cell.detailTextLabel?.text = "I said:"
+                //senderColor = UIColor.purpleColor()
             }else{
                 cell.textLabel?.textAlignment = .Left
-                senderLabelText = sender + " said:"
-                senderColor = UIColor.orangeColor()
+                //senderLabelText = sender + " said:"
+                //senderColor = UIColor.orangeColor()
             }
             
-            cell.nameLabel?.text = senderLabelText
-            cell.nameLabel?.textColor = senderColor
+            //cell.nameLabel?.text = senderLabelText
+            //cell.nameLabel?.textColor = senderColor
         }
         
         if let message = currentMessage[kCommunicationsMessageTerm]{

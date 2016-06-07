@@ -149,11 +149,12 @@
 		6E744E9B1CC1CB24009D3F9C /* FaceMap */ = {
 			isa = PBXGroup;
 			children = (
+				6E744EA01CC1CB24009D3F9C /* Main.storyboard */,
 				299F6BA71D03981900FEB75A /* MPCChatConstants.swift */,
 				299F6BA81D03981900FEB75A /* MPCChatTableViewCell.swift */,
 				299F6BA91D03981900FEB75A /* MPCChatViewController.swift */,
-				299F6BAA1D03981900FEB75A /* MPCManager.swift */,
 				299F6BAB1D03981900FEB75A /* MPCViewController.swift */,
+				299F6BAA1D03981900FEB75A /* MPCManager.swift */,
 				B6B7B7F31CD56F07004B62BB /* Loginpage-ViewController.swift */,
 				B662EE721D02F77C00E30F89 /* VCMapView.swift */,
 				B662EE701D02F24D00E30F89 /* ChatViewController.swift */,
@@ -163,7 +164,6 @@
 				B662EE6A1D02E1DE00E30F89 /* MapViewController.swift */,
 				6E744E9C1CC1CB24009D3F9C /* AppDelegate.swift */,
 				6E744E9E1CC1CB24009D3F9C /* ViewController.swift */,
-				6E744EA01CC1CB24009D3F9C /* Main.storyboard */,
 				6E744EA61CC1CB24009D3F9C /* Assets.xcassets */,
 				6E744EA81CC1CB24009D3F9C /* LaunchScreen.storyboard */,
 				6E744EAB1CC1CB24009D3F9C /* Info.plist */,
