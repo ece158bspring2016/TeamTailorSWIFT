@@ -41,6 +41,7 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     // MARK: IBAction method implementation
     
+    /*
     @IBAction func startStopAdvertising(sender: AnyObject) {
         let actionSheet = UIAlertController(title: "", message: "Change Visibility", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -72,7 +73,7 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
-    
+    */
     
     // MARK: UITableView related method implementation
     
@@ -82,13 +83,16 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(appDelagate.mpcManager.foundPeers.count)
         return appDelagate.mpcManager.foundPeers.count
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer")! as UITableViewCell
+        //print(appDelagate.mpcManager.foundPeers[indexPath.row].hashValue)
         cell.textLabel?.text = appDelagate.mpcManager.foundPeers[indexPath.row].displayName
+        cell.textLabel?.font = UIFont (name: "Avenir Book", size: 18.0)
         
         let image : UIImage = UIImage(named: "angryyellow")!
         cell.imageView?.image = image

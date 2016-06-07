@@ -10,14 +10,19 @@ import UIKit
 import Firebase
 import CoreLocation
 import MapKit
+import MultipeerConnectivity
 
-    var ref = Firebase(url: "https://sweltering-inferno-8889.firebaseio.com")
+
+var ref = Firebase(url: "https://sweltering-inferno-8889.firebaseio.com")
 
 class Loginpage_ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    
 
     @IBOutlet weak var userPNlogin: UITextField!
     
     let locationManager = CLLocationManager()
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +58,11 @@ class Loginpage_ViewController: UIViewController, CLLocationManagerDelegate {
             myUser.Interest1 = 0
             myUser.Interest2 = 0
             myUser.Interest3 = 0
+            
+            
+            appDelegate.mpcManager.updatePeer(userNN!)
+            print(appDelegate.mpcManager.peer)
+            
             self.performSegueWithIdentifier("logintomood", sender: sender)
         }
     }

@@ -152,6 +152,7 @@
 				299F6BA91D03981900FEB75A /* MPCChatViewController.swift */,
 				299F6BAA1D03981900FEB75A /* MPCManager.swift */,
 				299F6BAB1D03981900FEB75A /* MPCViewController.swift */,
+				B6B7B7F31CD56F07004B62BB /* Loginpage-ViewController.swift */,
 				B662EE721D02F77C00E30F89 /* VCMapView.swift */,
 				B662EE701D02F24D00E30F89 /* ChatViewController.swift */,
 				B662EE6E1D02E45A00E30F89 /* NetworkSelection.swift */,
@@ -165,7 +166,6 @@
 				6E744EAB1CC1CB24009D3F9C /* Info.plist */,
 				6E744EA31CC1CB24009D3F9C /* FaceMap.xcdatamodeld */,
 				B6B7B7F11CD2BAE0004B62BB /* RegisterPage-ViewController.swift */,
-				B6B7B7F31CD56F07004B62BB /* Loginpage-ViewController.swift */,
 				B63BCC421CD960D0005BAE23 /* InterestPage-ViewController.swift */,
 				B662EE741D03096600E30F89 /* MoodViewController.swift */,
 			);
