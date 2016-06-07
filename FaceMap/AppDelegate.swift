@@ -45,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         }
         
-        print("we out")
     }
 
     func applicationDidEnterBackground(application: UIApplication) {

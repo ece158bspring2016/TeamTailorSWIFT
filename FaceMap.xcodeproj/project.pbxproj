@@ -14,6 +14,7 @@
 		299F6BAF1D03981900FEB75A /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F6BAA1D03981900FEB75A /* MPCManager.swift */; };
 		299F6BB01D03981900FEB75A /* MPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299F6BAB1D03981900FEB75A /* MPCViewController.swift */; };
 		437438172C1CA436584A5B62 /* Pods_FaceMapTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FEAA5AE8379BE787C3D751 /* Pods_FaceMapTests.framework */; };
+		6E2347431D0750BA00ACEE73 /* ChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2347421D0750BA00ACEE73 /* ChatSession.swift */; };
 		6E744E9D1CC1CB24009D3F9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E744E9C1CC1CB24009D3F9C /* AppDelegate.swift */; };
 		6E744E9F1CC1CB24009D3F9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E744E9E1CC1CB24009D3F9C /* ViewController.swift */; };
 		6E744EA21CC1CB24009D3F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E744EA01CC1CB24009D3F9C /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		318B39E7E41AD4FAE0804940 /* Pods_FaceMapUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceMapUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52E4845CBF05F8B6EDE77A61 /* Pods-FaceMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceMap.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceMap/Pods-FaceMap.release.xcconfig"; sourceTree = "<group>"; };
 		5452947C9517986B77E86399 /* Pods-FaceMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceMapTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceMapTests/Pods-FaceMapTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E2347421D0750BA00ACEE73 /* ChatSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSession.swift; sourceTree = "<group>"; };
 		6E744E991CC1CB24009D3F9C /* FaceMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E744E9C1CC1CB24009D3F9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E744E9E1CC1CB24009D3F9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				B662EE701D02F24D00E30F89 /* ChatViewController.swift */,
 				B662EE6E1D02E45A00E30F89 /* NetworkSelection.swift */,
 				B662EE6C1D02E33400E30F89 /* User.swift */,
+				6E2347421D0750BA00ACEE73 /* ChatSession.swift */,
 				B662EE6A1D02E1DE00E30F89 /* MapViewController.swift */,
 				6E744E9C1CC1CB24009D3F9C /* AppDelegate.swift */,
 				6E744E9E1CC1CB24009D3F9C /* ViewController.swift */,
@@ -481,6 +484,7 @@
 			files = (
 				299F6BAC1D03981900FEB75A /* MPCChatConstants.swift in Sources */,
 				B6B7B7F41CD56F07004B62BB /* Loginpage-ViewController.swift in Sources */,
+				6E2347431D0750BA00ACEE73 /* ChatSession.swift in Sources */,
 				299F6BB01D03981900FEB75A /* MPCViewController.swift in Sources */,
 				B662EE6F1D02E45A00E30F89 /* NetworkSelection.swift in Sources */,
 				B63BCC431CD960D0005BAE23 /* InterestPage-ViewController.swift in Sources */,

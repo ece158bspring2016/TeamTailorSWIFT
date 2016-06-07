@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 import Firebase
 
+var button = UIButton(frame: CGRect(x: 0,y: 0,width: 50,height: 50))
+
+
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
@@ -22,11 +25,13 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        mapView.delegate = self
+
          print("MapView page loaded")
         
         // Do any additional setup after loading the view.
 
+        button.addTarget(self, action: #selector(MapViewController.ButtonClicked), forControlEvents: .TouchUpInside)
         
         let initialLocation = CLLocation(latitude: myUser.Latitude, longitude: myUser.Longitude)
         centerMapOnLocation(initialLocation)
@@ -66,7 +71,7 @@ class MapViewController: UIViewController {
             
             for user in snapshot.children {
                 
-                let uid = "cool"
+                let uid = user.value["uid"] as? String
                 let Nickname = user.value["Nickname"] as? String
                 let Feeling = user.value["Feeling"] as? Int
                 let Interest1 = user.value["Interest1"] as? Int
@@ -75,7 +80,7 @@ class MapViewController: UIViewController {
                 let Latitude = user.value["Latitude"] as? Double
                 let Longitude = user.value["Longitude"] as? Double
                 
-                let newUser = User( uid: uid,
+                let newUser = User( uid: uid!,
                     Nickname: Nickname!,
                     Feeling: Feeling!,
                     Interest1: Interest1!,
@@ -90,6 +95,27 @@ class MapViewController: UIViewController {
             self.mapView.addAnnotations( self.users )
 
             
+        })
+    }
+    
+    func findUserIDByNickname( nickname: String) -> String {
+        
+     
+        for user in users {
+            
+            if (user.Nickname == nickname) {
+                return user.uid
+            }
+
+            
+        }
+        
+        return ""
+    }
+    
+    func ButtonClicked(sender: UIButton){
+        dispatch_async(dispatch_get_main_queue(),{
+            self.performSegueWithIdentifier("chatRoom", sender: self)
         })
     }
     

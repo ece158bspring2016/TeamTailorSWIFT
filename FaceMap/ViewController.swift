@@ -19,6 +19,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, CLLocationManagerD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+       
+     //   mapView.delegate = self
+        
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
         

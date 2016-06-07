@@ -369,7 +369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ol-1y-2vG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2892" y="-862"/>
+            <point key="canvasLocation" x="3171.5" y="-166.5"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="HEY-5r-qNw">
@@ -392,11 +392,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="Iur-f4-cCu" id="9ni-tU-V6a"/>
+                        <segue destination="NG8-kj-omj" kind="show" identifier="chatRoom" id="K9q-7X-B58"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjD-Yi-yLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104.5" y="-159.5"/>
+            <point key="canvasLocation" x="2112.5" y="-151.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bwu-1F-q63">
@@ -415,7 +416,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dfX-o6-pLw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2435.5" y="-862.5"/>
+            <point key="canvasLocation" x="2715.5" y="-166.5"/>
         </scene>
         <!--MPC View Controller-->
         <scene sceneID="z2p-dM-c2p">

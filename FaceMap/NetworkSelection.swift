@@ -24,7 +24,10 @@ class NetworkSelection: UIViewController {
                 let usersRef = ref.childByAppendingPath("users")
                 let uid = authData.uid
                 
-                let userData = ["Nickname": myUser.Nickname,
+                myUser.uid = uid
+                
+                let userData = ["uid": myUser.uid,
+                    "Nickname": myUser.Nickname,
                     "Feeling": myUser.Feeling,
                     "Interest1": myUser.Interest1,
                     "Interest2": myUser.Interest2,
