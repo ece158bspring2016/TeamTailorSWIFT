@@ -32,7 +32,6 @@ class NetworkSelection: UIViewController {
                     "Latitude": myUser.Latitude,
                     "Longitude": myUser.Longitude,
                     "Report Count": myUser.reportCount]
-                //"token": authData.token]
                 
                 usersRef.childByAppendingPath(uid!).setValue(userData)
             }
