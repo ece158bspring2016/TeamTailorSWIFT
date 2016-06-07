@@ -30,6 +30,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var foundPeers = [MCPeerID]()
     var invitationHandler: ((Bool, MCSession) ->Void)!
     
+    var dict = [MCPeerID : String]()
+    
     override init(){
         
         
@@ -54,7 +56,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     }
     
-    func updatePeer(ss: String){
+    //Update Info
+    func updatePeer(ss: String, feels: String){
         peer = MCPeerID(displayName: ss)
         print("Updated!")
         
@@ -66,22 +69,41 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         browser.delegate = self
         
         //TODO: When need to add new information to advertiser. Stop it, and reinitialize
-        advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: kAppName)
+        advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: ["emotion" : feels], serviceType: kAppName)
+        print("!!!!!!!!!DISCOVERY!!!!!!!")
+        print(advertiser.discoveryInfo)
         advertiser.delegate = self
 
     }
     
-    
+    //BROWSER: 
+    //used to find other nearby devices and invite them to join a session
+    //Prereq: other devices must advertise themselves
     //Delagete methods
+    
+    
+    
     func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        print("(1)")
-        print(peerID)
+        
         var peerAlreadyInBrowser = false
         
         //TODO: All discover information for a specific peer will be here. Need to pass it to the foundPeer delegate
-        print(foundPeers.count)
+        print("BROWSING!")
+        print(peerID)
+        print(info?.enumerate())
+        
+        
+        dict[peerID] = info!["emotion"]
+        /*
+        print("dictionary...")
+        for (key, val) in dict {
+            print(dict[key])
+        }
+        */
+        
         
         //TODO LATER: Implement faster search function to find peers and remove
+        //syntax below: for loop for dictionaries (key, val)
         for (index, aPeer) in foundPeers.enumerate()
         {
             if aPeer == peerID{
@@ -91,8 +113,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             }
         }
         
-        print(foundPeers.count)
-        print("(1)")
+        
         if !peerAlreadyInBrowser{
             foundPeers.append(peerID)
         }
@@ -120,6 +141,12 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         print(error.localizedDescription)
     }
     
+    
+    //ADVERTISER:
+    //This class is responsible for advertising a device, 
+    //meaning making the device visible or not to others, 
+    //and for accepting or not invitations from other peers for connecting to sessions.
+
     func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: ((Bool, MCSession) -> Void)) {
         
         self.invitationHandler = invitationHandler
@@ -129,9 +156,13 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     }
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
+        print("ERROR:")
         print(error.localizedDescription)
     }
     
+    //SESSION:
+    //connection established between two peers, 
+    //after the first one has invited the second
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state{
         case MCSessionState.Connected:

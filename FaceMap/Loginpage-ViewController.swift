@@ -59,10 +59,6 @@ class Loginpage_ViewController: UIViewController, CLLocationManagerDelegate {
             myUser.Interest2 = 0
             myUser.Interest3 = 0
             
-            
-            appDelegate.mpcManager.updatePeer(userNN!)
-            print(appDelegate.mpcManager.peer)
-            
             self.performSegueWithIdentifier("logintomood", sender: sender)
         }
     }

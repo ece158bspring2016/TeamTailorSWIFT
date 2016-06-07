@@ -15,6 +15,7 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     let appDelagate = UIApplication.sharedApplication().delegate as! AppDelegate
     var isAdvertising: Bool!
     
+    @IBOutlet weak var UserName: UILabel!
     @IBOutlet weak var tblPeers: UITableView!
     
     override func viewDidLoad() {
@@ -29,6 +30,8 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         appDelagate.mpcManager.advertiser.startAdvertisingPeer()
         isAdvertising = true
         
+        UserName.text = myUser.Nickname
+        
         // Register cell classes
         tblPeers.registerClass(UITableViewCell.self, forCellReuseIdentifier: "idCellPeer")
     }
@@ -39,42 +42,6 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     
-    // MARK: IBAction method implementation
-    
-    /*
-    @IBAction func startStopAdvertising(sender: AnyObject) {
-        let actionSheet = UIAlertController(title: "", message: "Change Visibility", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        var actionTitle: String
-        if isAdvertising == true {
-            actionTitle = "Make me invisible to others"
-        }else {
-            
-            actionTitle = "Make me visible to others"
-        }
-        
-        let visibilityAction: UIAlertAction = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            if self.isAdvertising == true {
-                self.appDelagate.mpcManager.advertiser.stopAdvertisingPeer()
-            }else {
-                self.appDelagate.mpcManager.advertiser.startAdvertisingPeer()
-            }
-            
-            self.isAdvertising = !self.isAdvertising
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
-        }
-        
-        actionSheet.addAction(visibilityAction)
-        actionSheet.addAction(cancelAction)
-        
-        self.presentViewController(actionSheet, animated: true, completion: nil)
-    }
-    
-    */
-    
     // MARK: UITableView related method implementation
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -83,20 +50,25 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(appDelagate.mpcManager.foundPeers.count)
         return appDelagate.mpcManager.foundPeers.count
     }
     
     
+    //customizations of tableViewCell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("idCellPeer")! as UITableViewCell
-        //print(appDelagate.mpcManager.foundPeers[indexPath.row].hashValue)
         cell.textLabel?.text = appDelagate.mpcManager.foundPeers[indexPath.row].displayName
-        cell.textLabel?.font = UIFont (name: "Avenir Book", size: 18.0)
         
-        let image : UIImage = UIImage(named: "angryyellow")!
+        print("in tableView testing dict")
+        let feels : String
+        feels = appDelagate.mpcManager.dict[appDelagate.mpcManager.foundPeers[indexPath.row]]!
+        print(feels)
+        
+        
+        let image : UIImage = UIImage(named: feels)!
         cell.imageView?.image = image
         
+        cell.textLabel?.font = UIFont (name: "Avenir Book", size: 20.0)
         return cell
     }
     
@@ -110,6 +82,7 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
         //TODO: This function is used to send peer info we are interested in
         appDelagate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelagate.mpcManager.session, withContext: nil, timeout: 20)
+       
         
     }
     
@@ -130,11 +103,14 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default)  {(alertAction) -> Void in
             
             self.appDelagate.mpcManager.invitationHandler(true, self.appDelagate.mpcManager.session)
-            
+            print("!!!!!!!!")
+            print("Accepted!")
         }
         
         let declineAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) {(alertAction) -> Void in
             self.appDelagate.mpcManager.invitationHandler!(false,self.appDelagate.mpcManager.session)
+            print("!!!!!!!!")
+            print("Declined!")
         }
         
         alert.addAction(acceptAction)
@@ -152,6 +128,7 @@ class MPCViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     func connectedWithPeer(peerID: MCPeerID) {
         NSOperationQueue.mainQueue().addOperationWithBlock{ () -> Void in
             
+            print("Done!")
             self.performSegueWithIdentifier("idSegueChat", sender: self)}
         
     }
