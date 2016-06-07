@@ -20,25 +20,6 @@ protocol MPCManagerDelegate {
     func connectedWithPeer(peerID: MCPeerID)
 }
 
-/*
-@available(iOS 7.0, *)
-public class MCPeerID : NSObject, NSCopying, NSSecureCoding {
-    public init(displayName myDisplayName: String)
-    
-    public var displayName: String { get }
-}
-*/
-/*
-class subMCPeerID: MCPeerID{
-    
-    override var displayName: String {
-        return myUser.Nickname
-    }
-    
-}
-*/
-
-
 class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate {
     
     var delegate:MPCManagerDelegate?
@@ -49,17 +30,16 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     var foundPeers = [MCPeerID]()
     var invitationHandler: ((Bool, MCSession) ->Void)!
     
-    //mpcManager.peer.displayName = myUser.Nickname
-    
     override init(){
-    
+        
+        
         super.init()
         
         //Initialize variables 
-        peer = MCPeerID(displayName: UIDevice.currentDevice().name)
+        peer = MCPeerID(displayName: "facemap")
+        print("(0)")
         
-        
-        //peer = MCPeerID(displayName: myUser.Nickname)
+        /*
         //session = MCSession(peer: peer, securityIdentity: [myIdentity], encryptionPreference: MCEncryptionPreference.Required)
         session = MCSession(peer: peer)
         session.delegate = self
@@ -70,15 +50,37 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         //TODO: When need to add new information to advertiser. Stop it, and reinitialize
         advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: kAppName)
         advertiser.delegate = self
+        */
     
     }
     
+    func updatePeer(ss: String){
+        peer = MCPeerID(displayName: ss)
+        print("Updated!")
+        
+        //session = MCSession(peer: peer, securityIdentity: [myIdentity], encryptionPreference: MCEncryptionPreference.Required)
+        session = MCSession(peer: peer)
+        session.delegate = self
+        
+        browser = MCNearbyServiceBrowser(peer: peer, serviceType: kAppName)
+        browser.delegate = self
+        
+        //TODO: When need to add new information to advertiser. Stop it, and reinitialize
+        advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: kAppName)
+        advertiser.delegate = self
+
+    }
+    
+    
     //Delagete methods
     func browser(browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        
+        print("(1)")
+        print(peerID)
         var peerAlreadyInBrowser = false
         
         //TODO: All discover information for a specific peer will be here. Need to pass it to the foundPeer delegate
+        print(foundPeers.count)
+        
         //TODO LATER: Implement faster search function to find peers and remove
         for (index, aPeer) in foundPeers.enumerate()
         {
@@ -89,6 +91,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             }
         }
         
+        print(foundPeers.count)
+        print("(1)")
         if !peerAlreadyInBrowser{
             foundPeers.append(peerID)
         }
